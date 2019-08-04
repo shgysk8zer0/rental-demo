@@ -50,3 +50,13 @@ ready().then(async () => {
 		}
 	});
 });
+
+customElements.define('rental-property', class HTMLRentalPropertyElement extends HTMLElement
+{
+	constructor() {
+		super();
+		this.attachShadow({mode: 'open'});
+		const tmp = document.getElementById('rental-property-template').content.cloneNode(true);
+		this.shadowRoot.append(tmp);
+	}
+});
