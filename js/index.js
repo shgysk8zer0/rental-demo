@@ -3,7 +3,7 @@ import 'https://cdn.kernvalley.us/js/std-js/shims.js';
 import './share-button.js';
 import './current-year.js';
 // import './gravatar-img.js';
-import 'https://cdn.kernvalley.us/components/bacon-ipsum.js';
+// import 'https://cdn.kernvalley.us/components/bacon-ipsum.js';
 import './imgur-img.js';
 import 'https://cdn.kernvalley.us/components/login-button.js';
 import 'https://cdn.kernvalley.us/components/logout-button.js';
@@ -49,4 +49,14 @@ ready().then(async () => {
 			target.tagName === 'DIALOG' ? target.close() : target.open = false;
 		}
 	});
+});
+
+customElements.define('rental-property', class HTMLRentalPropertyElement extends HTMLElement
+{
+	constructor() {
+		super();
+		this.attachShadow({mode: 'open'});
+		const tmp = document.getElementById('rental-property-template').content.cloneNode(true);
+		this.shadowRoot.append(tmp);
+	}
 });

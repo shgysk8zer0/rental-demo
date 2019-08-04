@@ -68,7 +68,84 @@
 			</button>
 		</nav>
 		<main>
-			<bacon-ipsum class="card shadow block"></bacon-ipsum>
+			<section class="listings card shadow">
+				<rental-property class="card shadow">
+					<img src="/img/listings/05c6cbb6-713f-486d-a867-e3f70d967bb5.jpg" slot="image" decoding="async" />
+					<span slot="price">1,200</span>
+					<blockquote slot="description">Beautiful 3bd/2ba 1784sqft home on 1/2acre. Newer home with modern features throughout. This home boasts gorgeous mountain views, large open kitchen with an island, fireplace, large laundry room, a fenced backyard and 2 car garage with additional carport as well. Extra perk that this home is on Erskine Creek Water!</blockquote>
+					<span slot="area">1,784</span>
+					<span slot="bedrooms">3</span>
+					<span slot="bathrooms">2</span>
+					<address slot="location">
+						<div>3353 Erskine Creek Road</div>
+						<div>
+							<span>Lake Isabella</span>,
+							<span>CA</span>
+						</div>
+					</address>
+				</rental-property>
+				<rental-property class="card shadow">
+					<img src="/img/listings/05c6cbb6-713f-486d-a867-e3f70d967bb5.jpg" slot="image" decoding="async" />
+					<span slot="price">1,200</span>
+					<blockquote slot="description">Beautiful 3bd/2ba 1784sqft home on 1/2acre. Newer home with modern features throughout. This home boasts gorgeous mountain views, large open kitchen with an island, fireplace, large laundry room, a fenced backyard and 2 car garage with additional carport as well. Extra perk that this home is on Erskine Creek Water!</blockquote>
+					<span slot="area">1,784</span>
+					<span slot="bedrooms">3</span>
+					<span slot="bathrooms">2</span>
+					<address slot="location">
+						<div>3353 Erskine Creek Road</div>
+						<div>
+							<span>Lake Isabella</span>,
+							<span>CA</span>
+						</div>
+					</address>
+				</rental-property>
+				<rental-property class="card shadow">
+					<img src="/img/listings/05c6cbb6-713f-486d-a867-e3f70d967bb5.jpg" slot="image" decoding="async" />
+					<span slot="price">1,200</span>
+					<blockquote slot="description">Beautiful 3bd/2ba 1784sqft home on 1/2acre. Newer home with modern features throughout. This home boasts gorgeous mountain views, large open kitchen with an island, fireplace, large laundry room, a fenced backyard and 2 car garage with additional carport as well. Extra perk that this home is on Erskine Creek Water!</blockquote>
+					<span slot="area">1,784</span>
+					<span slot="bedrooms">3</span>
+					<span slot="bathrooms">2</span>
+					<address slot="location">
+						<div>3353 Erskine Creek Road</div>
+						<div>
+							<span>Lake Isabella</span>,
+							<span>CA</span>
+						</div>
+					</address>
+				</rental-property>
+				<rental-property class="card shadow">
+					<img src="/img/listings/05c6cbb6-713f-486d-a867-e3f70d967bb5.jpg" slot="image" decoding="async" />
+					<span slot="price">1,200</span>
+					<blockquote slot="description">Beautiful 3bd/2ba 1784sqft home on 1/2acre. Newer home with modern features throughout. This home boasts gorgeous mountain views, large open kitchen with an island, fireplace, large laundry room, a fenced backyard and 2 car garage with additional carport as well. Extra perk that this home is on Erskine Creek Water!</blockquote>
+					<span slot="area">1,784</span>
+					<span slot="bedrooms">3</span>
+					<span slot="bathrooms">2</span>
+					<address slot="location">
+						<div>3353 Erskine Creek Road</div>
+						<div>
+							<span>Lake Isabella</span>,
+							<span>CA</span>
+						</div>
+					</address>
+				</rental-property>
+				<rental-property class="card shadow">
+					<img src="/img/listings/05c6cbb6-713f-486d-a867-e3f70d967bb5.jpg" slot="image" decoding="async" />
+					<span slot="price">1,200</span>
+					<blockquote slot="description">Beautiful 3bd/2ba 1784sqft home on 1/2acre. Newer home with modern features throughout. This home boasts gorgeous mountain views, large open kitchen with an island, fireplace, large laundry room, a fenced backyard and 2 car garage with additional carport as well. Extra perk that this home is on Erskine Creek Water!</blockquote>
+					<span slot="area">1,784</span>
+					<span slot="bedrooms">3</span>
+					<span slot="bathrooms">2</span>
+					<address slot="location">
+						<div>3353 Erskine Creek Road</div>
+						<div>
+							<span>Lake Isabella</span>,
+							<span>CA</span>
+						</div>
+					</address>
+				</rental-property>
+			</section>
+			<!-- <bacon-ipsum class="card shadow block"></bacon-ipsum> -->
 		</main>
 		<aside id="sidebar"></aside>
 		<footer id="footer" class="background-contrast color-alt">
@@ -230,5 +307,100 @@
 				<use xlink:href="img/icons.svg#sign-in" />
 			</svg>
 		</registration-form>
+		<template id="rental-property-template">
+			<style>
+				@import url("https://cdn.kernvalley.us/css/core-css/element.css");
+				@import url("https://cdn.kernvalley.us/css/core-css/class-rules.css");
+				:host {
+					display: block;
+				}
+
+				.listing.grid {
+					grid-template-areas: 'image header'
+					'image location'
+					'image description';
+					grid-template-rows: 3em 3em auto;
+					grid-template-columns: 1fr 3fr;
+					grid-gap: 0.8em;
+				}
+
+				@media (max-width: 800px) {
+					.listing.grid {
+						grid-template-areas: 'image' 'header' 'location' 'description';
+						grid-template-rows: auto;
+						grid-template-columns: auto;
+					}
+				}
+
+				.listing .listing-image {
+					grid-area: image;
+				}
+
+				.listing .listing-header {
+					grid-area: header;
+					grid-template-areas: 'price area rooms';
+					grid-template-columns: repeat(3, 1fr);
+				}
+
+				.listing-header .rent-slot {
+					grid-area: price;
+				}
+
+				.listing-header .rent-area {
+					grid-area: area;
+				}
+
+				.listing-header .rent-rooms {
+					grid-area: rooms;
+				}
+
+				.listing .listing-location {
+					grid-area: location;
+				}
+
+				.listing .listing-description {
+					grid-area: description;
+				}
+			</style>
+			<div class="grid listing">
+				<slot name="image" class="listing-image inline-block"></slot>
+				<header class="listing-header grid">
+					<div class="rent-slot inline-block">
+						<b class="block">Rent</b>
+						<slot name="price"></slot>
+					</div>
+					<div class="rent-area inline-block">
+						<b class="block">Square Ft.</b>
+						<slot name="area"></slot>
+					</div>
+					<div class="rent-rooms inline-block">
+						<b>Bedroms</b>
+						<slot name="bedrooms"></slot>
+						<br />
+						<b>Bathrooms</b>
+						<slot name="bathrooms"></slot>
+					</div>
+				</header>
+				<div class="listing-location clearfix">
+					<svg viewBox="0 0 16 16.003" class="current-color icon float-left">
+						<path d="M8 0a5 5 0 0 0-5 5c0 .173.014.332.031.5.014.167.036.336.063.5C3.666 9.514 6 12.003 8 14.003c2-2 4.334-4.489 4.906-8.003a6.38 6.38 0 0 0 .063-.5c.017-.168.03-.327.03-.5a5 5 0 0 0-5-5zm0 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4z" />
+					</svg>
+					<slot name="location"></slot>
+				</div>
+				<details class="listing-description">
+					<summary>Description</summary>
+					<slot name="description" class="block"></slot>
+				</details>
+			</div>
+		</template>
+		<template id="address-template">
+			<style>
+				:host {
+					display: block;
+				}
+			</style>
+			<address itemprop="address" itemtype="https://schema.org/PostalAddress" itemscope="">
+			</address>
+		</template>
 	</body>
 </html>
