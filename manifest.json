@@ -1,10 +1,10 @@
 {
-  "name": "",
-  "short_name": "",
+  "name": "Acme Property",
+  "short_name": "Acme Property",
   "version": "1.0.0",
   "start_url": "/",
   "lang": "en",
-  "description": "",
+  "description": "A demo PWA for property / real estate",
   "icons": [{
     "src": "/img/favicon.svg",
     "sizes": "any",

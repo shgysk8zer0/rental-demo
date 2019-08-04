@@ -2,8 +2,13 @@ import 'https://cdn.kernvalley.us/js/std-js/deprefixer.js';
 import 'https://cdn.kernvalley.us/js/std-js/shims.js';
 import './share-button.js';
 import './current-year.js';
-import './gravatar-img.js';
+// import './gravatar-img.js';
 import './imgur-img.js';
+import 'https://cdn.kernvalley.us/components/login-button.js';
+import 'https://cdn.kernvalley.us/components/logout-button.js';
+import 'https://cdn.kernvalley.us/components/register-button.js';
+import 'https://cdn.kernvalley.us/components/login-form/login-form.js';
+import 'https://cdn.kernvalley.us/components/registration-form/registration-form.js';
 import {$, ready, registerServiceWorker} from 'https://cdn.kernvalley.us/js/std-js/functions.js';
 
 if (document.documentElement.dataset.hasOwnProperty('serviceWorker')) {
