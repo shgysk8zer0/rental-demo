@@ -3,6 +3,7 @@ import 'https://cdn.kernvalley.us/js/std-js/shims.js';
 import './share-button.js';
 import './current-year.js';
 // import './gravatar-img.js';
+import 'https://cdn.kernvalley.us/components/bacon-ipsum.js';
 import './imgur-img.js';
 import 'https://cdn.kernvalley.us/components/login-button.js';
 import 'https://cdn.kernvalley.us/components/logout-button.js';

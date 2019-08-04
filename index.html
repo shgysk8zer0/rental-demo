@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" class="no-js border-box smooth-scroll" itemtype="https://schema.org/WebPage" prefix="og: http://ogp.me/ns#"  itemscope="">
+<html lang="en" dir="ltr" class="no-js border-box smooth-scroll" data-service-worker="/service-worker.js" itemtype="https://schema.org/WebPage" prefix="og: http://ogp.me/ns#"  itemscope="">
 	<head>
 		<base href="/" />
 		<meta charset="utf-8" />
@@ -11,23 +11,23 @@
 		<meta itemprop="keywords" content="" />
 		<meta name="referrer" content="origin-when-cross-origin"/>
 		<meta name="mobile-web-app-capable" content="yes" />
-		<meta itemprop="thumbnailUrl" content="" />
+		<meta itemprop="thumbnailUrl" content="/img/background/home-640.jpg" />
 		<!-- Social data -->
 		<!-- Facebook | OpenGraph -->
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="" />
-		<meta property="og:url" content="" />
+		<meta property="og:title" content="Acme Property" />
+		<meta property="og:url" content="/" />
 		<meta property="og:description" content="A demo PWA for property / real estate" />
 		<meta property="og:keywords" content="" />
-		<meta property="og:image" content="" />
-		<meta property="og:image:height" content="" />
-		<meta property="og:image:width" content="" />
+		<meta property="og:image" content="/img/background/home-640.jpg" />
+		<meta property="og:image:height" content="427" />
+		<meta property="og:image:width" content="640" />
 		<!-- /Facebook | OpenGraph -->
 		<!-- Twitter -->
 		<meta name="twitter:card" content="summary" />
-		<meta name="twitter:creator" content="" />
+		<meta name="twitter:creator" content="@shgysk8zer0" />
 		<meta name="twitter:description" content="A demo PWA for property / real estate" />
-		<meta name="twitter:image" content="" />
+		<meta name="twitter:image" content="/img/background/home-640.jpg" />
 		<!-- /Twitter -->
 		<!-- /Social data -->
 		<meta name="msapplication-TileColor" content="#528ff9" />
@@ -49,8 +49,8 @@
 		<link rel="stylesheet" href="/css/index.css" media="all" />
 	</head>
 	<body id="top" class="grid font-main background-primary color-default">
-		<header id="header"></header>
-		<nav id="nav" class="sticky top shadow background-accent color-alt z-3">
+		<header id="header" class="background-fixed background-cover background-center"></header>
+		<nav id="nav" class="sticky top shadow color-alt z-3">
 			<button type="button" class="btn btn-primary" is="login-button" hidden="">
 				<svg class="current-color icon">
 					<use xlink:href="img/icons.svg#sign-in" />
@@ -67,49 +67,118 @@
 				</svg>
 			</button>
 		</nav>
-		<main></main>
+		<main>
+			<bacon-ipsum class="card shadow block"></bacon-ipsum>
+		</main>
 		<aside id="sidebar"></aside>
 		<footer id="footer" class="background-contrast color-alt">
-			<div class="social-links cols-2">
-				<div class="cols inline-block">
-					<a class="block" href="https://github.com/shgysk8zer0/" target="_blank" rel="external noopener">
-						<svg class="current-color icon social-icon">
-							<use xlink:href="/img/icons.svg#mark-github" />
-						</svg>
-						<span>GitHub Profile</span>
+			<div id="footer-about" itemtype="https://schema.org/RealEstateAgent" itemscope="">
+				<meta itemprop="url" content="https://ipmkrv.com" />
+				<meta itemprop="telephone" content="+1-760-592-6468" />
+				<meta itemprop="priceRange" content="$$$" />
+				<meta itemprop="openingHours" content="mo-fr,09:00-16:00" />
+				<meta itemprop="currenciesAccepted" content="USD" />
+				<meta itemprop="paymentAccepted" content="Credit Card" />
+				<div id="footer-address">
+					<a href="/" itemprop="url" class="block">
+						<h2 itemprop="name">Acme Property</h2>
+						<img src="/img/favicon.svg" decoding="async" width="128" height="128" itemprop="image logo" />
 					</a>
-					<a class="block" href="https://github.com/shgysk8zer0/rental-demo" target="_blank" rel="external noopener">
-						<svg class="current-color icon social-icon">
-							<use xlink:href="/img/icons.svg#repo" />
-						</svg>
-						<span>GitHub Repo</span>
-					</a>
-					<a class="block" href="https://github.com/shgysk8zer0/rental-demo/issues" target="_blank" rel="external noopener">
-						<svg class="current-color icon social-icon">
-							<use xlink:href="/img/icons.svg#issue-opened" />
-						</svg>
-						<span>Report a Problem</span>
-					</a>
+					<address itemprop="address" itemtype="https://schema.org/PostalAddress" itemscope="">
+						<div itemprop="streetAddress">
+							<svg class="current-color icon">
+								<use xlink:href="/img/icons.svg#mark-location" />
+							</svg>
+							<span>234 Some St.</span>
+						</div>
+						<div>
+							<span itemprop="addressLocality">Anywhere</span>,
+							<span itemprop="addressRegion">CA</span>
+							<span itemprop="postalCode">98765</span>
+							<meta itemprop="addressCountry" content="US" />
+						</div>
+						<a href="tel:+1-555-555-5555" content="+1-555-555-5555" itemprop="telephone" class="block">
+							<svg class="current-color icon">
+								<use xlink:href="/img/icons.svg#call-start" />
+							</svg>
+							<span>(555) 555-5555</span>
+						</a>
+						<a href="https://kernvalley.us" itemprop="url" class="block">
+							<svg class="current-color icon">
+								<use xlink:href="/img/icons.svg#globe" />
+							</svg>
+							<span>https://example.com</span>
+						</a>
+						<a href="mailto:admin@kernvalley.us" content="admin@kernvalley.us" itemprop="email" class="block">
+							<svg class="current-color icon">
+								<use xlink:href="/img/icons.svg#mail" />
+							</svg>
+							<span>admin@kernvalley.us</span>
+						</a>
+					</address>
 				</div>
-				<div class="cols inline-block">
-					<a class="block" href="https://shgysk8zer0.github.io" target="_blank" rel="external noopener" itemprop="sameAs">
-						<svg class="current-color icon social-icon">
-							<use xlink:href="/img/icons.svg#web-browser" />
-						</svg>
-						<span>My Website</span>
-					</a>
-					<a class="block" href="https://twitter.com/shgysk8zer0" target="_blank" rel="external noopener" itemprop="sameAs">
-						<svg class="icon social-icon">
-							<use xlink:href="/img/icons.svg#twitter" />
-						</svg>
-						<span>On Twitter</span>
-					</a>
-					<a class="block" href="https://www.linkedin.com/in/chris-zuber-455346141/" target="_blank" rel="external noopener" itemprop="sameAs">
-						<svg class="icon social-icon">
-							<use xlink:href="/img/icons.svg#linkedin" />
-						</svg>
-						<span>LinkedIn</span>
-					</a>
+				<div id="footer-area-served">
+					<h3>Areas Served</h3>
+					<ul>
+						<li itemprop="areaServed">Metropolis</li>
+						<li itemprop="areaServed">Gotham</li>
+						<li itemprop="areaServed">Central City</li>
+						<li itemprop="areaServed">Middle Earth</li>
+						<li itemprop="areaServed">Nowhere</li>
+						<li itemprop="areaServed">Everywhere</li>
+						<li itemprop="areaServed">Other Places</li>
+					</ul>
+				</div>
+				<div id="footer-social">
+					<h3>Follow Us</h3>
+					<ul>
+						<li>
+							<a href="https://www.facebook.com/" itemprop="sameAs">
+								<svg class="icon">
+									<use xlink:href="/img/icons.svg#facebook" />
+								</svg>
+								<span>Facebook</span>
+							</a>
+						</li>
+						<li>
+							<a href="https://twitter.com" itemprop="sameAs">
+								<svg class="icon">
+									<use xlink:href="/img/icons.svg#twitter" />
+								</svg>
+								<span>Twitter</span>
+							</a>
+						</li>
+						<li>
+							<a href="https://www.linkedin.com" itemprop="sameAs">
+								<svg class="icon">
+									<use xlink:href="/img/icons.svg#linkedin" />
+								</svg>
+								<span>LinkedIn</span>
+							</a>
+						</li>
+						<li>
+							<a href="https://youtube.com" itemprop="sameAs">
+								<svg class="icon">
+									<use xlink:href="/img/icons.svg#youtube" />
+								</svg>
+								<span>YouTube</span>
+							</a>
+						</li>
+						<li>
+							<a href="https://www.instagram.com/" itemprop="sameAs">
+								<img src="/img/logos/instagram.svg" class="icon" />
+								<span>Instagram</span>
+							</a>
+						</li>
+						<li>
+							<a href="https://github.com/shgysk8zer0/rentaal-demo" itemprop="sameAs">
+								<svg class="icon">
+									<use xlink:href="/img/icons.svg#mark-github" />
+								</svg>
+								<span>GitHub</span>
+							</a>
+						</li>
+					</ul>
 				</div>
 			</div>
 			<hr />
@@ -124,7 +193,7 @@
 				</span>
 			</div>
 		</footer>
-		<button type="button" is="share-button" class="round shadow fixed z-4" aria-label="Share">
+		<button type="button" is="share-button" class="round shadow fixed z-4" text="Check out this property demo" aria-label="Share">
 			<svg class="current-color icon">
 				<use xlink:href="/img/icons.svg#public-share"></use>
 			</svg>

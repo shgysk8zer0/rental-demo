@@ -38,4 +38,9 @@
 	--nav-height: 2.7rem;
 	--header-height: 0;
 	--footer-height: auto;
+
+	--header-bg-1280: url("/img/background/home-1280.jpg");
+	--header-bg-1024: url("/img/background/home-1024.jpg");
+	--header-bg-800: url("/img/background/home-800.jpg");
+	--header-bg-640: url("/img/background/home-640.jpg");
 }

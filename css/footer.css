@@ -20,3 +20,21 @@
 .social-links a:hover svg {
 	transform: rotate(1turn) scale(1.3);
 }
+
+#footer-about li {
+	list-style: none;
+}
+
+@media (min-width: 800px) {
+	#footer-about {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+	}
+}
+
+@media (max-width: 799px) {
+	#footer-about {
+		text-align: center;
+	}
+}
