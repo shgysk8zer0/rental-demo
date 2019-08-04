@@ -1,4 +1,4 @@
-# rental-demo
+# [rental-demo](https://dazzling-sammet-71e49d.netlify.com/)
 A demo PWA for property / real estate
 
 [![Build Status](https://travis-ci.org/shgysk8zer0/rental-demo.svg?branch=master)](https://travis-ci.org/shgysk8zer0/rental-demo)

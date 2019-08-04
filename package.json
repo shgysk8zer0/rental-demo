@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/shgysk8zer0/rental-demo/issues"
   },
-  "homepage": "https://github.com/shgysk8zer0/rental-demo",
+  "homepage": "https://dazzling-sammet-71e49d.netlify.com/",
   "scripts": {
     "preinstall": "git submodule update --recursive --init",
     "postinstall": "npm run build:icons",
