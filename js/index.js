@@ -11,7 +11,12 @@ import 'https://cdn.kernvalley.us/components/register-button.js';
 import 'https://cdn.kernvalley.us/components/login-form/login-form.js';
 import 'https://cdn.kernvalley.us/components/registration-form/registration-form.js';
 import {$, ready, registerServiceWorker} from 'https://cdn.kernvalley.us/js/std-js/functions.js';
+import PaymentRequestShim from 'https://cdn.kernvalley.us/js/PaymentAPI/PaymentRequest.js';
 import {alert} from 'https://cdn.kernvalley.us/js/std-js/asyncDialog.js';
+
+if (! ('PaymentRequest' in window)) {
+	window.PaymentRequest = PaymentRequestShim;
+}
 
 if (document.documentElement.dataset.hasOwnProperty('serviceWorker')) {
 	registerServiceWorker(document.documentElement.dataset.serviceWorker).catch(console.error);
@@ -122,8 +127,7 @@ ready().then(async () => {
 	}
 });
 
-customElements.define('rental-property', class HTMLRentalPropertyElement extends HTMLElement
-{
+customElements.define('rental-property', class HTMLRentalPropertyElement extends HTMLElement {
 	constructor() {
 		super();
 		this.attachShadow({mode: 'open'});
