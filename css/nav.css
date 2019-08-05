@@ -5,3 +5,8 @@
 	justify-content: space-around;
 	background-color: rgba(40, 40, 40, 0.9);
 }
+
+#notification-btn {
+	--button-background: none;
+	--button-color: #950A0A;
+}

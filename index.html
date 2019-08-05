@@ -66,6 +66,11 @@
 					<use xlink:href="img/icons.svg#sign-out" />
 				</svg>
 			</button>
+			<button type="button" id="notification-btn" class="btn btn-primary float-right">
+				<svg class="current-color icon">
+					<use xlink:href="/img/icons.svg#bell" />
+				</svg>
+			</button>
 		</nav>
 		<main>
 			<section class="listings card shadow">
@@ -273,6 +278,64 @@
 				<use xlink:href="/img/icons.svg#public-share"></use>
 			</svg>
 		</button>
+		<dialog id="schedule-appt">
+			<form name="scheduleAppointment">
+				<fieldset>
+					<legend>Contact Info</legend>
+					<div>
+						<label for="schedule-fname">
+							<svg class="current-color icon">
+								<use xlink:href="/img/icons.svg#avatar-default" />
+							</svg>
+						</label>
+						<input type="text" name="givenName" id="schedule-fname" autocomplete="given-name" placeholder="First name" required="" />
+						<input type="text" name="familyName" id="schedule-lname" autocomplete="family-name" placeholder="Last name" required="" />
+					</div>
+					<div>
+						<label for="schedule-telephone">
+							<svg class="current-color icon">
+								<use xlink:href="/img/icons.svg#call-start" />
+							</svg>
+						</label>
+						<input type="tel" name="telephone" id="schedule-telephone" autocomplete="tel" placeholder="+1-555-555-5555" required="" />
+					</div>
+					<div>
+						<label for="schedule-email">
+							<svg class="current-color icon">
+								<use xlink:href="/img/icons.svg#mail" />
+							</svg>
+						</label>
+						<input type="email" name="email" id="schedule-email" autocomplete="email" placeholder="user@example.com" required="" />
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend>Date and Time</legend>
+					<div>
+						<label for="schedule-date">
+							<svg class="current-color icon">
+								<use xlink:href="/img/icons.svg#calendar" />
+							</svg>
+						</label>
+						<input type="date" name="date" id="schedule-date" placeholder="YYYY-MM-DD" required="" />
+						<input type="time" name="time" id="schedule-time" placeholder="HH:mm" required="" />
+					</div>
+				</fieldset>
+				<textarea name="note" placeholder="Enter additional info and questions"></textarea>
+				<hr />
+				<button type="submit" class="btn btn-accept">
+					<svg class="current-color icon">
+						<use xlink:href="/img/icons.svg#check" />
+					</svg>
+					<span class="mobile-hidden">Schedule</span>
+				</button>
+				<button type="reset" class="btn btn-reject">
+					<svg class="current-color icon">
+						<use xlink:href="/img/icons.svg#x" />
+					</svg>
+					<span class="mobile-hidden">Cancel</span>
+				</button>
+			</form>
+		</dialog>
 		<login-form class="relative z-4">
 			<svg class="current-color icon" slot="submit-btn">
 				<use xlink:href="img/icons.svg#check" />
@@ -362,7 +425,7 @@
 					grid-area: description;
 				}
 			</style>
-			<div class="grid listing">
+			<div class="grid listing relative">
 				<slot name="image" class="listing-image inline-block"></slot>
 				<header class="listing-header grid">
 					<div class="rent-slot inline-block">
@@ -391,6 +454,12 @@
 					<summary>Description</summary>
 					<slot name="description" class="block"></slot>
 				</details>
+				<button type="button" class="btn absolute btn-default bottom right schedule-btn" data-show-modal="#schedule-appt">
+					<svg class="current-color icon" viewBox="0 0 14 16">
+						<path fill-rule="evenodd" d="M13 2h-1v1.5c0 .28-.22.5-.5.5h-2c-.28 0-.5-.22-.5-.5V2H6v1.5c0 .28-.22.5-.5.5h-2c-.28 0-.5-.22-.5-.5V2H2c-.55 0-1 .45-1 1v11c0 .55.45 1 1 1h11c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm0 12H2V5h11v9zM5 3H4V1h1v2zm6 0h-1V1h1v2zM6 7H5V6h1v1zm2 0H7V6h1v1zm2 0H9V6h1v1zm2 0h-1V6h1v1zM4 9H3V8h1v1zm2 0H5V8h1v1zm2 0H7V8h1v1zm2 0H9V8h1v1zm2 0h-1V8h1v1zm-8 2H3v-1h1v1zm2 0H5v-1h1v1zm2 0H7v-1h1v1zm2 0H9v-1h1v1zm2 0h-1v-1h1v1zm-8 2H3v-1h1v1zm2 0H5v-1h1v1zm2 0H7v-1h1v1zm2 0H9v-1h1v1z"/>
+					</svg>
+					<span class="mobile-hidden">Schedule</span>
+				</button>
 			</div>
 		</template>
 		<template id="address-template">
