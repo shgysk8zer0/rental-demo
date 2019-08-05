@@ -16,7 +16,6 @@ const config = {
 		'/js/imgur-img.js',
 		'https://cdn.kernvalley.us/js/std-js/Notification.js',
 		'https://cdn.kernvalley.us/js/std-js/webShareApi.js',
-		'/js/share-config.js',
 		'https://cdn.kernvalley.us/js/std-js/esQuery.js',
 		'https://cdn.kernvalley.us/js/std-js/functions.js',
 		'/css/index.css',
