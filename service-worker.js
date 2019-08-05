@@ -1,7 +1,7 @@
 'use strict';
 // 2019-06-11 12:25
 const config = {
-	version: location.hostname === 'localhost' ? new Date().toISOString() : '1.0.0-a3',
+	version: location.hostname === 'localhost' ? new Date().toISOString() : '1.0.0-a4',
 	stale: [
 		'/',
 		'/js/index.js',
@@ -38,7 +38,6 @@ const config = {
 		'https://cdn.kernvalley.us/css/animate.css/animate.css',
 		'/img/apple-touch-icon.png',
 		'/img/favicon.svg',
-		'/img/logos/creative-common-by-sa.svg',
 		'/img/octicons/mail.svg',
 	].map(path => new URL(path, location.origin).href),
 };
