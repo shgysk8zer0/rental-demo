@@ -1,7 +1,7 @@
 'use strict';
 // 2019-06-11 12:25
 const config = {
-	version: location.hostname === 'localhost' ? new Date().toISOString() : '1.0.0-a4',
+	version: location.hostname === 'localhost' ? new Date().toISOString() : '1.0.0-a6',
 	stale: [
 		'/',
 		'/js/index.js',
@@ -16,7 +16,6 @@ const config = {
 		'/js/imgur-img.js',
 		'https://cdn.kernvalley.us/js/std-js/Notification.js',
 		'https://cdn.kernvalley.us/js/std-js/webShareApi.js',
-		'/js/share-config.js',
 		'https://cdn.kernvalley.us/js/std-js/esQuery.js',
 		'https://cdn.kernvalley.us/js/std-js/functions.js',
 		'/css/index.css',
@@ -48,7 +47,12 @@ self.addEventListener('install', async () => {
 	const old = keys.filter(k => k !== config.version);
 	await Promise.all(old.map(key => caches.delete(key)));
 
-	await cache.addAll(config.stale);
+	try {
+		await cache.addAll(config.stale);
+	} catch (err) {
+		console.error(err);
+	}
+
 	skipWaiting();
 });
 

@@ -3,13 +3,13 @@
   base = "./"
   publish = "./"
   command = "npm run build"
-  [build.environment]
-    GIT_LFS_ENABLED = "1"
+[build.environment]
+  GIT_LFS_ENABLED = "true"
 [[headers]]
   for="/*"
   [headers.values]
     Link = '''
-      </css/styles/index.css>; rel=preload; as=style, \
+      </css/index.css>; rel=preload; as=style, \
       </css/js/index.js>; rel=preload; as=script, \
       </img/icons.svg>; rel=preload; as=image
     '''
