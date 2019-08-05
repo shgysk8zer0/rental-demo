@@ -1,7 +1,7 @@
 'use strict';
 // 2019-06-11 12:25
 const config = {
-	version: location.hostname === 'localhost' ? new Date().toISOString() : '1.0.0-a6',
+	version: location.hostname === 'localhost' ? new Date().toISOString() : '1.0.0-a7',
 	stale: [
 		'/',
 		'/js/index.js',
