@@ -1,7 +1,7 @@
 'use strict';
 // 2019-06-11 12:25
 const config = {
-	version: location.hostname === 'localhost' ? new Date().toISOString() : '1.0.0-a5',
+	version: location.hostname === 'localhost' ? new Date().toISOString() : '1.0.0-a6',
 	stale: [
 		'/',
 		'/js/index.js',
@@ -48,7 +48,7 @@ self.addEventListener('install', async () => {
 	const old = keys.filter(k => k !== config.version);
 	await Promise.all(old.map(key => caches.delete(key)));
 
-	await cache.addAll(config.stale);
+	await cache.addAll(config.stale).catch(console.error);
 	skipWaiting();
 });
 
