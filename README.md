@@ -1,7 +1,7 @@
 # [rental-demo](https://dazzling-sammet-71e49d.netlify.com/)
 A demo PWA for property / real estate
 
-[![Build Status](https://travis-ci.org/shgysk8zer0/rental-demo.svg?branch=master)](https://travis-ci.org/shgysk8zer0/rental-demo)
+[![Build Status](https://travis-ci.com/shgysk8zer0/rental-demo.svg?branch=master)](https://travis-ci.com/shgysk8zer0/rental-demo)
 [![GitHub license](https://img.shields.io/github/license/shgysk8zer0/rental-demo.svg)](https://github.com/shgysk8zer0/rental-demo/blob/master/LICENSE)
 ![GitHub last commit](https://img.shields.io/github/last-commit/shgysk8zer0/rental-demo.svg)
 ![GitHub release](https://img.shields.io/github/release/shgysk8zer0/rental-demo.svg)
