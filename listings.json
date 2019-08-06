@@ -1,12 +1,9 @@
 [{
   "identifier": "e9b9baad-6f4e-42cd-886b-0afc51c4dcae",
-  "rent": {
-    "amount": 1200
-  },
   "description": "Beautiful 3bd/2ba 1784sqft home on 1/2acre. Newer home with modern features throughout. This home boasts gorgeous mountain views, large open kitchen with an island, fireplace, large laundry room, a fenced backyard and 2 car garage with additional carport as well. Extra perk that this home is on Erskine Creek Water!",
   "image": "/img/listings/05c6cbb6-713f-486d-a867-e3f70d967bb5.jpg",
   "numberOfRooms": 3,
-  "bathrooms": 2,
+  "petsAllowed": "yes",
   "floorSize": {
     "value": 1784
   },
@@ -21,5 +18,9 @@
     "longitude": 35.605738,
     "latitude": -118.461487,
     "url": "geo:35.605738,-118.461487;crs=wgs84;u=0"
-  }
+  },
+  "rent": {
+    "amount": 1200
+  },
+  "bathrooms": 2
 }]

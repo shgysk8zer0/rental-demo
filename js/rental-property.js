@@ -25,7 +25,7 @@ customElements.define('rental-property', class HTMLRentalPropertyElement extends
 	}
 
 	toJSON() {
-		const {identifier, description, floorSize, numberOfRooms, geo} = this;
+		const {identifier, description, floorSize, numberOfRooms, geo, petsAllowed} = this;
 		return {
 			'@type': 'House',
 			'@context': 'https://schema.org',
@@ -34,6 +34,7 @@ customElements.define('rental-property', class HTMLRentalPropertyElement extends
 			floorSize,
 			numberOfRooms,
 			geo,
+			petsAllowed,
 		};
 	}
 
@@ -99,20 +100,6 @@ customElements.define('rental-property', class HTMLRentalPropertyElement extends
 			el.addressCountry = addressCountry;
 			this.append(el);
 		}).catch(console.error);
-	}
-
-	get rent() {
-		return parseFloat(getSlotContent('rent', this.shadowRoot));
-	}
-
-	set rent({amount, currency = 'USD'}) {
-		removeSlottedElements('rent', this.shadowRoot);
-		const el = document.createElement('span');
-		el.slot = 'rent';
-		const val = Intl.NumberFormat(navigator.language, {style: 'currency', currency}).format(amount);
-		el.textContent = val;
-		// el.setAttribute('itemprop', 'description');
-		this.append(el);
 	}
 
 	get floorSize() {
@@ -201,6 +188,18 @@ customElements.define('rental-property', class HTMLRentalPropertyElement extends
 		this.append(el);
 	}
 
+	get petsAllowed() {
+		return getSlotAttribute('petsAllowed', this.shadowRoot, 'content');
+	}
+
+	set petsAllowed(val) {
+		removeSlottedElements('petsAllowed', this.shadowRoot);
+		const el = document.createElement('meta');
+		el.slot = 'petsAllowed';
+		el.setAttribute('itemprop', 'petsAllowed');
+		el.content = val;
+	}
+
 	get bathrooms() {
 		return getSlotContent('bathrooms', this.shadowRoot);
 	}
@@ -210,6 +209,20 @@ customElements.define('rental-property', class HTMLRentalPropertyElement extends
 		const el = document.createElement('span');
 		el.slot = 'bathrooms';
 		el.textContent = val;
+		this.append(el);
+	}
+
+	get rent() {
+		return parseFloat(getSlotContent('rent', this.shadowRoot));
+	}
+
+	set rent({amount, currency = 'USD'}) {
+		removeSlottedElements('rent', this.shadowRoot);
+		const el = document.createElement('span');
+		el.slot = 'rent';
+		const val = Intl.NumberFormat(navigator.language, {style: 'currency', currency}).format(amount);
+		el.textContent = val;
+		// el.setAttribute('itemprop', 'description');
 		this.append(el);
 	}
 });

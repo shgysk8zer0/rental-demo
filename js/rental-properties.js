@@ -25,13 +25,14 @@ customElements.define('rental-properties', class HTMLRentalPropertiesElement ext
 				const prop = new HTMLRentalPropertyElement();
 				prop.identifier = listing.identifier;
 				prop.description = listing.description;
-				prop.rent = listing.rent;
+				prop.image = listing.image;
 				prop.floorSize = listing.floorSize;
 				prop.numberOfRooms = listing.numberOfRooms;
-				prop.bathrooms = listing.bathrooms;
 				prop.address = listing.address;
 				prop.geo = listing.geo;
-				prop.image = listing.image;
+				prop.petsAllowed = listing.petsAllowed;
+				prop.bathrooms = listing.bathrooms;
+				prop.rent = listing.rent;
 				prop.classList.add('card', 'shadow', 'card', 'shadow', 'animation-speed-slow', 'animation-fade-in-out', 'fadeInUp');
 				return prop;
 			})).then(els => this.append(...els));
