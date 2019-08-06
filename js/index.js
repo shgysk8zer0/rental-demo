@@ -2,6 +2,7 @@ import 'https://cdn.kernvalley.us/js/std-js/deprefixer.js';
 import 'https://cdn.kernvalley.us/js/std-js/shims.js';
 import './share-button.js';
 import './current-year.js';
+import './rental-properties.js';
 // import './gravatar-img.js';
 // import 'https://cdn.kernvalley.us/components/bacon-ipsum.js';
 import './imgur-img.js';
@@ -127,18 +128,4 @@ ready().then(async () => {
 	}
 });
 
-customElements.define('rental-property', class HTMLRentalPropertyElement extends HTMLElement {
-	constructor() {
-		super();
-		this.attachShadow({mode: 'open'});
-		const tmp = document.getElementById('rental-property-template').content.cloneNode(true);
-		$('[data-show-modal]', tmp).click(event => {
-			const target = event.target.closest('[data-show-modal]');
-			$(target.dataset.showModal).showModal();
-		}, {
-			passive: true,
-		});
 
-		this.shadowRoot.append(tmp);
-	}
-});
