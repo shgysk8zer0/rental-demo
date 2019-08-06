@@ -43,13 +43,40 @@
 		<link rel="icon" type="image/png" sizes="16x16" href="/img/icon-16.png" />
 		<link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#528ff9" />
 		<link rel="shortcut icon" href="/favicon.ico" />
-		<link rel="import" href="https://cdn.kernvalley.us/components/login-form/login-form.html" name="login-form-template" async="" />
-		<link rel="import" href="https://cdn.kernvalley.us/components/registration-form/registration-form.html" name="registration-form-template" async="" />
 		<link rel="preload" href="/img/icons.svg" as="image" type="image/svg+xml" />
 		<link rel="stylesheet" href="/css/index.css" media="all" />
 	</head>
 	<body id="top" class="grid font-main background-primary color-default">
-		<header id="header" class="background-fixed background-cover background-center"></header>
+		<header id="header" class="background-fixed background-cover background-center color-alt relative">
+			<a href="tel:+1-555-555-5555" id="header-call" class="btn btn-default absolute header-floating-btn">
+				<svg class="current-color icon">
+					<use xlink:href="/img/icons.svg#call-start" />
+				</svg>
+				<span class="mobile-hidden">(555) 555-5555</span>
+			</a>
+			<a href="mailto:admin@kernvalley.us" id="header-email" class="btn btn-default absolute header-floating-btn">
+				<svg class="current-color icon">
+					<use xlink:href="/img/icons.svg#mail" />
+				</svg>
+				<span class="mobile-hidden">admin@kernvalley.us</span>
+			</a>
+			<div class="center animation-speed-normal animation-ease-in-out fadeInRight" id="header-contact">
+				<h1 class="center font-title">Acme Property</h1>
+				<address >
+					<div>
+						<svg class="current-color icon">
+							<use xlink:href="/img/icons.svg#mark-location" />
+						</svg>
+						<span>234 Some St.</span>
+					</div>
+					<div>
+						<span>Anywhere</span>,
+						<span>CA</span>
+						<span>98765</span>
+					</div>
+				</address>
+		</div>
+		</header>
 		<nav id="nav" class="sticky top shadow color-alt z-3">
 			<button type="button" class="btn btn-primary" is="login-button" hidden="">
 				<svg class="current-color icon">
@@ -74,80 +101,159 @@
 		</nav>
 		<main>
 			<section class="listings card shadow">
-				<rental-property class="card shadow">
-					<img src="/img/listings/05c6cbb6-713f-486d-a867-e3f70d967bb5.jpg" slot="image" decoding="async" />
+				<rental-property class="card shadow card shadow animation-speed-slow animation-fade-in-out fadeInUp" itemtype="https://schema.org/House" itemscope="">
+					<div itemprop="geo" itemtype="https://schema.org/GeoCoordinates" itemscope="" hidden="">
+						<meta itemprop="longitude" content="35.605738" />
+						<meta itemprop="latitude" content="-118.461487" />
+					</div>
+					<img src="/img/listings/05c6cbb6-713f-486d-a867-e3f70d967bb5.jpg" slot="image" decoding="async" itemprop="image" />
 					<span slot="price">1,200</span>
-					<blockquote slot="description">Beautiful 3bd/2ba 1784sqft home on 1/2acre. Newer home with modern features throughout. This home boasts gorgeous mountain views, large open kitchen with an island, fireplace, large laundry room, a fenced backyard and 2 car garage with additional carport as well. Extra perk that this home is on Erskine Creek Water!</blockquote>
+					<blockquote slot="description" itemprop="description">Beautiful 3bd/2ba 1784sqft home on 1/2acre. Newer home with modern features throughout. This home boasts gorgeous mountain views, large open kitchen with an island, fireplace, large laundry room, a fenced backyard and 2 car garage with additional carport as well. Extra perk that this home is on Erskine Creek Water!</blockquote>
 					<span slot="area">1,784</span>
-					<span slot="bedrooms">3</span>
+					<span slot="bedrooms" itemprop="numberOfRooms">3</span>
 					<span slot="bathrooms">2</span>
-					<address slot="location">
-						<div>3353 Erskine Creek Road</div>
+					<address slot="location" itemprop="address" itemtype="https://schema.org/PostalAddress" itemscope="">
+						<div itemprop="streetAddress">3353 Erskine Creek Road</div>
 						<div>
-							<span>Lake Isabella</span>,
-							<span>CA</span>
+							<span itemprop="addressLocality">Lake Isabella</span>,
+							<span itemprop="addressRegion">CA</span>
+							<span itemprop="postalCode">93240</span>
+							<meta itemprop="addressCountry" value="US" />
 						</div>
 					</address>
+					<span class="btn btn-primary" data-before="Pets Allowed: " itemprop="petsAllowed">Yes</span>
 				</rental-property>
-				<rental-property class="card shadow">
-					<img src="/img/listings/05c6cbb6-713f-486d-a867-e3f70d967bb5.jpg" slot="image" decoding="async" />
+				<rental-property class="card shadow card shadow animation-speed-slow animation-fade-in-out fadeInUp" itemtype="https://schema.org/House" itemscope="">
+					<div itemprop="geo" itemtype="https://schema.org/GeoCoordinates" itemscope="" hidden="">
+						<meta itemprop="longitude" content="35.605738" />
+						<meta itemprop="latitude" content="-118.461487" />
+					</div>
+					<img src="/img/listings/05c6cbb6-713f-486d-a867-e3f70d967bb5.jpg" slot="image" decoding="async" itemprop="image" />
 					<span slot="price">1,200</span>
-					<blockquote slot="description">Beautiful 3bd/2ba 1784sqft home on 1/2acre. Newer home with modern features throughout. This home boasts gorgeous mountain views, large open kitchen with an island, fireplace, large laundry room, a fenced backyard and 2 car garage with additional carport as well. Extra perk that this home is on Erskine Creek Water!</blockquote>
+					<blockquote slot="description" itemprop="description">Beautiful 3bd/2ba 1784sqft home on 1/2acre. Newer home with modern features throughout. This home boasts gorgeous mountain views, large open kitchen with an island, fireplace, large laundry room, a fenced backyard and 2 car garage with additional carport as well. Extra perk that this home is on Erskine Creek Water!</blockquote>
 					<span slot="area">1,784</span>
-					<span slot="bedrooms">3</span>
+					<span slot="bedrooms" itemprop="numberOfRooms">3</span>
 					<span slot="bathrooms">2</span>
-					<address slot="location">
-						<div>3353 Erskine Creek Road</div>
+					<address slot="location" itemprop="address" itemtype="https://schema.org/PostalAddress" itemscope="">
+						<div itemprop="streetAddress">3353 Erskine Creek Road</div>
 						<div>
-							<span>Lake Isabella</span>,
-							<span>CA</span>
+							<span itemprop="addressLocality">Lake Isabella</span>,
+							<span itemprop="addressRegion">CA</span>
+							<span itemprop="postalCode">93240</span>
+							<meta itemprop="addressCountry" value="US" />
 						</div>
 					</address>
+					<span class="btn btn-primary" data-before="Pets Allowed: " itemprop="petsAllowed">Yes</span>
 				</rental-property>
-				<rental-property class="card shadow">
-					<img src="/img/listings/05c6cbb6-713f-486d-a867-e3f70d967bb5.jpg" slot="image" decoding="async" />
+				<rental-property class="card shadow card shadow animation-speed-slow animation-fade-in-out fadeInUp" itemtype="https://schema.org/House" itemscope="">
+					<div itemprop="geo" itemtype="https://schema.org/GeoCoordinates" itemscope="" hidden="">
+						<meta itemprop="longitude" content="35.605738" />
+						<meta itemprop="latitude" content="-118.461487" />
+					</div>
+					<img src="/img/listings/05c6cbb6-713f-486d-a867-e3f70d967bb5.jpg" slot="image" decoding="async" itemprop="image" />
 					<span slot="price">1,200</span>
-					<blockquote slot="description">Beautiful 3bd/2ba 1784sqft home on 1/2acre. Newer home with modern features throughout. This home boasts gorgeous mountain views, large open kitchen with an island, fireplace, large laundry room, a fenced backyard and 2 car garage with additional carport as well. Extra perk that this home is on Erskine Creek Water!</blockquote>
+					<blockquote slot="description" itemprop="description">Beautiful 3bd/2ba 1784sqft home on 1/2acre. Newer home with modern features throughout. This home boasts gorgeous mountain views, large open kitchen with an island, fireplace, large laundry room, a fenced backyard and 2 car garage with additional carport as well. Extra perk that this home is on Erskine Creek Water!</blockquote>
 					<span slot="area">1,784</span>
-					<span slot="bedrooms">3</span>
+					<span slot="bedrooms" itemprop="numberOfRooms">3</span>
 					<span slot="bathrooms">2</span>
-					<address slot="location">
-						<div>3353 Erskine Creek Road</div>
+					<address slot="location" itemprop="address" itemtype="https://schema.org/PostalAddress" itemscope="">
+						<div itemprop="streetAddress">3353 Erskine Creek Road</div>
 						<div>
-							<span>Lake Isabella</span>,
-							<span>CA</span>
+							<span itemprop="addressLocality">Lake Isabella</span>,
+							<span itemprop="addressRegion">CA</span>
+							<span itemprop="postalCode">93240</span>
+							<meta itemprop="addressCountry" value="US" />
 						</div>
 					</address>
+					<span class="btn btn-primary" data-before="Pets Allowed: " itemprop="petsAllowed">Yes</span>
 				</rental-property>
-				<rental-property class="card shadow">
-					<img src="/img/listings/05c6cbb6-713f-486d-a867-e3f70d967bb5.jpg" slot="image" decoding="async" />
+				<rental-property class="card shadow card shadow animation-speed-slow animation-fade-in-out fadeInUp" itemtype="https://schema.org/House" itemscope="">
+					<div itemprop="geo" itemtype="https://schema.org/GeoCoordinates" itemscope="" hidden="">
+						<meta itemprop="longitude" content="35.605738" />
+						<meta itemprop="latitude" content="-118.461487" />
+					</div>
+					<img src="/img/listings/05c6cbb6-713f-486d-a867-e3f70d967bb5.jpg" slot="image" decoding="async" itemprop="image" />
 					<span slot="price">1,200</span>
-					<blockquote slot="description">Beautiful 3bd/2ba 1784sqft home on 1/2acre. Newer home with modern features throughout. This home boasts gorgeous mountain views, large open kitchen with an island, fireplace, large laundry room, a fenced backyard and 2 car garage with additional carport as well. Extra perk that this home is on Erskine Creek Water!</blockquote>
+					<blockquote slot="description" itemprop="description">Beautiful 3bd/2ba 1784sqft home on 1/2acre. Newer home with modern features throughout. This home boasts gorgeous mountain views, large open kitchen with an island, fireplace, large laundry room, a fenced backyard and 2 car garage with additional carport as well. Extra perk that this home is on Erskine Creek Water!</blockquote>
 					<span slot="area">1,784</span>
-					<span slot="bedrooms">3</span>
+					<span slot="bedrooms" itemprop="numberOfRooms">3</span>
 					<span slot="bathrooms">2</span>
-					<address slot="location">
-						<div>3353 Erskine Creek Road</div>
+					<address slot="location" itemprop="address" itemtype="https://schema.org/PostalAddress" itemscope="">
+						<div itemprop="streetAddress">3353 Erskine Creek Road</div>
 						<div>
-							<span>Lake Isabella</span>,
-							<span>CA</span>
+							<span itemprop="addressLocality">Lake Isabella</span>,
+							<span itemprop="addressRegion">CA</span>
+							<span itemprop="postalCode">93240</span>
+							<meta itemprop="addressCountry" value="US" />
 						</div>
 					</address>
+					<span class="btn btn-primary" data-before="Pets Allowed: " itemprop="petsAllowed">Yes</span>
 				</rental-property>
-				<rental-property class="card shadow">
-					<img src="/img/listings/05c6cbb6-713f-486d-a867-e3f70d967bb5.jpg" slot="image" decoding="async" />
+				<rental-property class="card shadow card shadow animation-speed-slow animation-fade-in-out fadeInUp" itemtype="https://schema.org/House" itemscope="">
+					<div itemprop="geo" itemtype="https://schema.org/GeoCoordinates" itemscope="" hidden="">
+						<meta itemprop="longitude" content="35.605738" />
+						<meta itemprop="latitude" content="-118.461487" />
+					</div>
+					<img src="/img/listings/05c6cbb6-713f-486d-a867-e3f70d967bb5.jpg" slot="image" decoding="async" itemprop="image" />
 					<span slot="price">1,200</span>
-					<blockquote slot="description">Beautiful 3bd/2ba 1784sqft home on 1/2acre. Newer home with modern features throughout. This home boasts gorgeous mountain views, large open kitchen with an island, fireplace, large laundry room, a fenced backyard and 2 car garage with additional carport as well. Extra perk that this home is on Erskine Creek Water!</blockquote>
+					<blockquote slot="description" itemprop="description">Beautiful 3bd/2ba 1784sqft home on 1/2acre. Newer home with modern features throughout. This home boasts gorgeous mountain views, large open kitchen with an island, fireplace, large laundry room, a fenced backyard and 2 car garage with additional carport as well. Extra perk that this home is on Erskine Creek Water!</blockquote>
 					<span slot="area">1,784</span>
-					<span slot="bedrooms">3</span>
+					<span slot="bedrooms" itemprop="numberOfRooms">3</span>
 					<span slot="bathrooms">2</span>
-					<address slot="location">
-						<div>3353 Erskine Creek Road</div>
+					<address slot="location" itemprop="address" itemtype="https://schema.org/PostalAddress" itemscope="">
+						<div itemprop="streetAddress">3353 Erskine Creek Road</div>
 						<div>
-							<span>Lake Isabella</span>,
-							<span>CA</span>
+							<span itemprop="addressLocality">Lake Isabella</span>,
+							<span itemprop="addressRegion">CA</span>
+							<span itemprop="postalCode">93240</span>
+							<meta itemprop="addressCountry" value="US" />
 						</div>
 					</address>
+					<span class="btn btn-primary" data-before="Pets Allowed: " itemprop="petsAllowed">Yes</span>
+				</rental-property>
+				<rental-property class="card shadow card shadow animation-speed-slow animation-fade-in-out fadeInUp" itemtype="https://schema.org/House" itemscope="">
+					<div itemprop="geo" itemtype="https://schema.org/GeoCoordinates" itemscope="" hidden="">
+						<meta itemprop="longitude" content="35.605738" />
+						<meta itemprop="latitude" content="-118.461487" />
+					</div>
+					<img src="/img/listings/05c6cbb6-713f-486d-a867-e3f70d967bb5.jpg" slot="image" decoding="async" itemprop="image" />
+					<span slot="price">1,200</span>
+					<blockquote slot="description" itemprop="description">Beautiful 3bd/2ba 1784sqft home on 1/2acre. Newer home with modern features throughout. This home boasts gorgeous mountain views, large open kitchen with an island, fireplace, large laundry room, a fenced backyard and 2 car garage with additional carport as well. Extra perk that this home is on Erskine Creek Water!</blockquote>
+					<span slot="area">1,784</span>
+					<span slot="bedrooms" itemprop="numberOfRooms">3</span>
+					<span slot="bathrooms">2</span>
+					<address slot="location" itemprop="address" itemtype="https://schema.org/PostalAddress" itemscope="">
+						<div itemprop="streetAddress">3353 Erskine Creek Road</div>
+						<div>
+							<span itemprop="addressLocality">Lake Isabella</span>,
+							<span itemprop="addressRegion">CA</span>
+							<span itemprop="postalCode">93240</span>
+							<meta itemprop="addressCountry" value="US" />
+						</div>
+					</address>
+					<span class="btn btn-primary" data-before="Pets Allowed: " itemprop="petsAllowed">Yes</span>
+				</rental-property>
+				<rental-property class="card shadow card shadow animation-speed-slow animation-fade-in-out fadeInUp" itemtype="https://schema.org/House" itemscope="">
+					<div itemprop="geo" itemtype="https://schema.org/GeoCoordinates" itemscope="" hidden="">
+						<meta itemprop="longitude" content="35.605738" />
+						<meta itemprop="latitude" content="-118.461487" />
+					</div>
+					<img src="/img/listings/05c6cbb6-713f-486d-a867-e3f70d967bb5.jpg" slot="image" decoding="async" itemprop="image" />
+					<span slot="price">1,200</span>
+					<blockquote slot="description" itemprop="description">Beautiful 3bd/2ba 1784sqft home on 1/2acre. Newer home with modern features throughout. This home boasts gorgeous mountain views, large open kitchen with an island, fireplace, large laundry room, a fenced backyard and 2 car garage with additional carport as well. Extra perk that this home is on Erskine Creek Water!</blockquote>
+					<span slot="area">1,784</span>
+					<span slot="bedrooms" itemprop="numberOfRooms">3</span>
+					<span slot="bathrooms">2</span>
+					<address slot="location" itemprop="address" itemtype="https://schema.org/PostalAddress" itemscope="">
+						<div itemprop="streetAddress">3353 Erskine Creek Road</div>
+						<div>
+							<span itemprop="addressLocality">Lake Isabella</span>,
+							<span itemprop="addressRegion">CA</span>
+							<span itemprop="postalCode">93240</span>
+							<meta itemprop="addressCountry" value="US" />
+						</div>
+					</address>
+					<span class="btn btn-primary" data-before="Pets Allowed: " itemprop="petsAllowed">Yes</span>
 				</rental-property>
 			</section>
 			<!-- <bacon-ipsum class="card shadow block"></bacon-ipsum> -->
@@ -378,6 +484,12 @@
 					display: block;
 				}
 
+				@media (max-width: 800px) {
+					.mobile-hidden {
+						display: none;
+					}
+				}
+
 				.listing.grid {
 					grid-template-areas: 'image header'
 					'image location'
@@ -437,10 +549,10 @@
 						<slot name="area"></slot>
 					</div>
 					<div class="rent-rooms inline-block">
-						<b>Bedroms</b>
+						<b>Bed<span class="mobile-hidden">rooms</span></b>
 						<slot name="bedrooms"></slot>
 						<br />
-						<b>Bathrooms</b>
+						<b>Bath<span class="mobile-hidden">rooms</span></b>
 						<slot name="bathrooms"></slot>
 					</div>
 				</header>

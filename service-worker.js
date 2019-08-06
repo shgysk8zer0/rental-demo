@@ -63,14 +63,12 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('fetch', async event => {
-	async function get(request) {
-		const cache = await caches.open(config.version);
-		const cached = await cache.match(request);
-
-		return cached instanceof Response ? cached : fetch(request);
-	}
-
 	if (event.request.method === 'GET' && config.stale.includes(event.request.url)) {
-		event.respondWith(get(event.request));
+		const cache = await caches.open(config.version);
+		const cached = await cache.match(event.request);
+
+		if (cached instanceof Response) {
+			event.respondWith(cached);
+		}
 	}
 });
