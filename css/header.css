@@ -20,3 +20,22 @@
 		background-image: var(--header-bg-640);
 	}
 }
+
+#header-contact {
+	position: relative;
+	top: calc(50vh - 8rem);
+	text-shadow: 6px 2px 2px rgba(0, 0, 0, 0.6);
+}
+
+.header-floating-btn {
+	position: absolute;
+	top: 0.6rem;
+}
+
+#header-call {
+	left: 0.6rem;
+}
+
+#header-email {
+	right: 0.6rem;
+}
