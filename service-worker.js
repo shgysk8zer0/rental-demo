@@ -1,7 +1,7 @@
 'use strict';
 
 const config = {
-	version: location.hostname === 'localhost' ? new Date().toISOString() : '1.0.0-a9',
+	version: location.hostname === 'localhost' ? new Date().toISOString() : '1.0.0-a10',
 	stale: [
 		'/',
 		'/js/index.js',
@@ -11,6 +11,7 @@ const config = {
 		'/js/current-year.js',
 		'/js/imgur-img.js',
 		'/js/rental-properties.js',
+		'/js/rental-property.js',
 		'/js/schema-postal-address.js',
 		'/js/slot-helpers.js',
 		'https://cdn.kernvalley.us/js/std-js/deprefixer.js',
@@ -22,15 +23,19 @@ const config = {
 		'https://cdn.kernvalley.us/js/std-js/functions.js',
 		'https://cdn.kernvalley.us/components/login-button.js',
 		'https://cdn.kernvalley.us/components/logout-button.js',
+		'https://cdn.kernvalley.us/components/register-button.js',
 		'https://cdn.kernvalley.us/components/gravatar-img.js',
 		'https://cdn.kernvalley.us/js/std-js/asyncDialog.js',
 		'https://cdn.kernvalley.us/js/User.js',
+		'https://cdn.kernvalley.us/js/PaymentAPI/PaymentRequest.js',
 		'https://cdn.kernvalley.us/js/PaymentAPI/PaymentRequestUpdateEvent.js',
 		'https://cdn.kernvalley.us/js/PaymentAPI/PaymentAddress.js',
 		'https://cdn.kernvalley.us/js/PaymentAPI/PaymentResponse.js',
 		'https://cdn.kernvalley.us/js/PaymentAPI/BasicCardResponse.js',
 		'https://cdn.kernvalley.us/js/PaymentAPI/BillingAddress.js',
 		'https://cdn.kernvalley.us/components/payment-form/payment-form.js',
+		'https://cdn.kernvalley.us/components/login-form/login-form.js',
+		'https://cdn.kernvalley.us/components/registration-form/registration-form.js',
 		'https://cdn.kernvalley.us/components/login-form/login-form.html',
 		'https://cdn.kernvalley.us/components/registration-form/registration-form.html',
 		'/css/index.css',
@@ -51,11 +56,14 @@ const config = {
 		'https://cdn.kernvalley.us/css/normalize/normalize.css',
 		'https://cdn.kernvalley.us/css/animate.css/animate.css',
 		'/img/apple-touch-icon.png',
+		'/img/icon-192.png',
 		'/img/favicon.svg',
 		'/img/octicons/mail.svg',
 		'/img/logos/instagram.svg',
 		'/img/icons.svg',
 		'/img/listings/05c6cbb6-713f-486d-a867-e3f70d967bb5.jpg',
+		'https://cdn.kernvalley.us/fonts/roboto.woff2',
+		'https://cdn.kernvalley.us/fonts/Libertine.woff',
 		'/listings.json',
 	].map(path => new URL(path, location.origin).href),
 };
@@ -83,15 +91,13 @@ self.addEventListener('activate', event => {
 
 self.addEventListener('fetch', event => {
 	if (event.request.method === 'GET' && config.stale.includes(event.request.url)) {
-		event.respondWith(async () => {
-			const cache = await caches.open(config.version);
-			const cached = await cache.match(event.request);
-
+		event.respondWith((async () => {
+			const cached = await caches.match(event.request);
 			if (cached instanceof Response) {
 				return cached;
 			} else {
 				return await fetch(event.request);
 			}
-		});
+		})());
 	}
 });
