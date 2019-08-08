@@ -1,7 +1,7 @@
 'use strict';
-// 2019-06-11 12:25
+
 const config = {
-	version: location.hostname === 'localhost' ? new Date().toISOString() : '1.0.0-a7',
+	version: location.hostname === 'localhost' ? new Date().toISOString() : '1.0.0-a8',
 	stale: [
 		'/',
 		'/js/index.js',
@@ -38,6 +38,7 @@ const config = {
 		'/img/apple-touch-icon.png',
 		'/img/favicon.svg',
 		'/img/octicons/mail.svg',
+		'/listings.json',
 	].map(path => new URL(path, location.origin).href),
 };
 

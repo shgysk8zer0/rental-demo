@@ -1,6 +1,6 @@
 [{
   "identifier": "e9b9baad-6f4e-42cd-886b-0afc51c4dcae",
-  "description": "Beautiful 3bd/2ba 1784sqft home on 1/2acre. Newer home with modern features throughout. This home boasts gorgeous mountain views, large open kitchen with an island, fireplace, large laundry room, a fenced backyard and 2 car garage with additional carport as well. Extra perk that this home is on Erskine Creek Water!",
+  "description": "Beautiful home on 1/2acre. Newer home with modern features throughout. This home boasts gorgeous mountain views, large open kitchen with an island, fireplace, large laundry room, a fenced backyard and 2 car garage with additional carport as well. Extra perk that this home is on Erskine Creek Water!",
   "image": "/img/listings/05c6cbb6-713f-486d-a867-e3f70d967bb5.jpg",
   "numberOfRooms": 3,
   "petsAllowed": "yes",
@@ -11,8 +11,9 @@
   "address": {
     "streetAddress": "3353 Erskine Creek Road",
     "addressLocality": "Lake Isabella",
-    "adressRegion": "CA",
-    "postalCode": 93240
+    "addressRegion": "CA",
+    "postalCode": 93240,
+    "addressCountry": "US"
   },
   "geo": {
     "longitude": 35.605738,
