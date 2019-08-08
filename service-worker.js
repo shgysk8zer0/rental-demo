@@ -1,7 +1,7 @@
 'use strict';
 
 const config = {
-	version: location.hostname === 'localhost' ? new Date().toISOString() : '1.0.0-a8',
+	version: location.hostname === 'localhost' ? new Date().toISOString() : '1.0.0-a9',
 	stale: [
 		'/',
 		'/js/index.js',
@@ -81,13 +81,17 @@ self.addEventListener('activate', event => {
 	}());
 });
 
-self.addEventListener('fetch', async event => {
+self.addEventListener('fetch', event => {
 	if (event.request.method === 'GET' && config.stale.includes(event.request.url)) {
-		const cache = await caches.open(config.version);
-		const cached = await cache.match(event.request);
+		event.respondWith(async () => {
+			const cache = await caches.open(config.version);
+			const cached = await cache.match(event.request);
 
-		if (cached instanceof Response) {
-			event.respondWith(cached);
-		}
+			if (cached instanceof Response) {
+				return cached;
+			} else {
+				return await fetch(event.request);
+			}
+		});
 	}
 });
