@@ -81,16 +81,19 @@
 				<svg class="current-color icon">
 					<use xlink:href="img/icons.svg#sign-in" />
 				</svg>
+				<span>Sign In</span>
 			</button>
 			<button type="button" class="btn btn-primary" is="register-button" hidden="">
 				<svg class="current-color icon">
 					<use xlink:href="img/icons.svg#contact-new" />
 				</svg>
+				<span>Register</span>
 			</button>
 			<button type="button" class="btn btn-reject" is="logout-button" hidden="">
 				<svg class="current-color icon">
 					<use xlink:href="img/icons.svg#sign-out" />
 				</svg>
+				<span>Sign Out</span>
 			</button>
 			<button type="button" id="notification-btn" class="btn btn-primary float-right">
 				<svg class="current-color icon">
@@ -314,40 +317,8 @@
 				</button>
 			</form>
 		</dialog>
-		<login-form class="relative z-4">
-			<svg class="current-color icon" slot="submit-btn">
-				<use xlink:href="img/icons.svg#check" />
-			</svg>
-			<svg class="current-color icon" slot="reset-btn">
-				<use xlink:href="img/icons.svg#x" />
-			</svg>
-			<svg class="current-color icon" slot="username-label">
-				<use xlink:href="img/icons.svg#avatar-default" />
-			</svg>
-			<svg class="current-color icon" slot="password-label">
-				<use xlink:href="img/icons.svg#dialog-password" />
-			</svg>
-			<svg class="current-color icon" slot="register-btn">
-				<use xlink:href="img/icons.svg#contact-new" />
-			</svg>
-		</login-form>
-		<registration-form class="relative z-4">
-			<svg class="current-color icon" slot="submit-btn">
-				<use xlink:href="img/icons.svg#check" />
-			</svg>
-			<svg class="current-color icon" slot="reset-btn">
-				<use xlink:href="img/icons.svg#x" />
-			</svg>
-			<svg class="current-color icon" slot="username-label">
-				<use xlink:href="img/icons.svg#avatar-default" />
-			</svg>
-			<svg class="current-color icon" slot="password-label">
-				<use xlink:href="img/icons.svg#dialog-password" />
-			</svg>
-			<svg class="current-color icon" slot="login-btn">
-				<use xlink:href="img/icons.svg#sign-in" />
-			</svg>
-		</registration-form>
+		<login-form class="relative z-4"></login-form>
+		<registration-form class="relative z-4"></registration-form>
 		<template id="rental-property-template">
 			<style>
 				@import url("https://cdn.kernvalley.us/css/core-css/element.css");
